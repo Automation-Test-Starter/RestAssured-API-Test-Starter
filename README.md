@@ -25,6 +25,7 @@
       - [初始化目录](#初始化目录-1)
       - [编写脚本](#编写脚本-1)
       - [调试脚本](#调试脚本-1)
+  - [参考资料](#参考资料)
 
 ## RestAssured 介绍
 
@@ -108,21 +109,80 @@ REST Assured 是一种用于测试 RESTful API 的 Java 测试框架，它使开
 
 - JDK 1.8+ ，我使用的 JDK 19
 - Gradle 6.0+ 或 Maven 3.0+，我使用的 Gradle 8.44,，我使用的 Gradle 8.44 和 Maven 3.9.5
-- RestAssured 4.3.3+
+- RestAssured 4.3.3+，我使用的是最新的 5.3.2 版本
 
 ## 项目初始化
 
+REST Assured 支持 Gradle 和 Maven 两种构建工具，你可以根据自己的喜好选择其中一种。下面分别介绍 Gradle 和 Maven 两种构建工具的项目初始化过程。
+
+本项目使用 Gradle 8.44 和 Maven 3.9.5 进行构建，如果你使用的是其他版本，可能会有不同。
+
 ### Gradle 版本
+
+可参考 demo 项目：<https://github.com/Automation-Test-Starter/RestAssured-gradle-demo>
 
 #### 创建一个空的 Gradle 工程
 
+```bash
+mkdir RestAssured-gradle-demo
+cd RestAssured-gradle-demo
+gradle init
+```
+
 #### 配置项目 build.gradle
+
+> 可 copy 本项目中的 build.gradle 文件内容，更多配置可参考[官方文档](https://github.com/rest-assured/rest-assured/wiki/GettingStarted#rest-assured)
+
+```groovy
+// 插件配置
+plugins {
+  // java 插件声明
+    id 'java'
+}
+
+// 仓库源配置
+repositories {
+  // 使用 maven 中心仓库源
+  mavenCentral()
+}
+// 依赖配置
+dependencies {
+    // rest-assured 依赖
+    testImplementation 'io.rest-assured:rest-assured:5.3.2'
+}
+```
 
 #### gradle build 项目并初始化
 
+- 用编辑器打开本项目 Terminal 窗口，执行以下命令确认项目 build 成功
+
+```bash
+gradle build
+```
+
+- 初始化完成：完成向导后，Gradle 将在项目目录中生成一个基本的 Gradle 项目结构
+  
 #### 初始化目录
 
+在 src/test/java 目录下创建一个 api 目录，用于存放测试脚本
+
+> api 测试脚本通常位于 src/test/java 目录中。
+
+- 项目根目录新建 src 文件夹
+- 在 src 目录下新建 test 文件夹
+- 在 test 目录下创建 java 文件夹
+- 在 java 目录下，你可以创建你的 api 测试文件夹 api，以及其他文件夹，如 resources 等。
+
+目录结构可参考 >> [项目结构](#项目结构)
+
 #### 编写脚本
+
+- 在 api 目录下创建一个 demo.java 文件，用于编写测试脚本
+
+- 示例脚本如下，可供参考
+
+```java
+
 
 #### 调试脚本
 
@@ -137,3 +197,11 @@ REST Assured 是一种用于测试 RESTful API 的 Java 测试框架，它使开
 #### 编写脚本
 
 #### 调试脚本
+
+## 参考资料
+
+- Rest assured 官方文档：<https://rest-assured.io/>
+
+- Rest assured 官方 github：<https://github.com/rest-assured/rest-assured>
+
+- Rest assured 官方文档中文翻译：<https://github.com/RookieTester/rest-assured-doc>

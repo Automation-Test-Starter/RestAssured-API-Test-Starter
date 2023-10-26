@@ -1,0 +1,15 @@
+
+// add java plugin
+plugins {
+    id 'java'
+}
+
+// Repository Source Configuration
+repositories {
+  // Using the maven central repository source
+  mavenCentral()
+}
+// add rest-assured dependencie
+dependencies {
+    testImplementation 'io.rest-assured:rest-assured:5.3.2'
+}
