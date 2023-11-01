@@ -58,7 +58,6 @@
         - [查看全局日志输出](#查看全局日志输出)
       - [局部日志配置](#局部日志配置)
         - [添加日志步骤](#添加日志步骤)
-        - [局部日志代码示例](#局部日志代码示例)
         - [查看局部日志输出](#查看局部日志输出)
       - [LogConfig 配置说明](#logconfig-配置说明)
       - [Request Logging 请求日志记录](#request-logging-请求日志记录)
@@ -992,28 +991,7 @@ public class TestDemo {
 
 ##### 添加日志步骤
 
-- 引入日志相关的依赖类
-  
-```java
-import io.restassured.config.LogConfig;
-import io.restassured.filter.log.LogDetail;
-import io.restassured.filter.log.RequestLoggingFilter;
-import io.restassured.filter.log.ResponseLoggingFilter;
-```
-
-- 在 setup() 方法中添加日志配置
-
-> 使用 LogConfig 配置，启用了请求和响应的日志记录，以及启用了漂亮的输出格式。启用了请求和响应的日志记录过滤器，这将记录请求和响应的详细信息。
-
-```java
-// 启用局部请求和响应日志记录
-        // 在 @BeforeClass 中定义 LogConfig 配置
-        logConfig = LogConfig.logConfig()
-                .enableLoggingOfRequestAndResponseIfValidationFails(LogDetail.ALL)
-                .enablePrettyPrinting(true);
-```
-
-- 在 想要打印日志的测试方法中启用了局部日志记录过滤器
+- 在想要打印日志的测试方法中启用了添加日志配置，示例：
 
 ```java
     @Test(description = "Verify that the Get Post API returns correctly")
@@ -1021,7 +999,7 @@ import io.restassured.filter.log.ResponseLoggingFilter;
 
         // Given
         given()
-                .config(RestAssured.config().logConfig(logConfig))
+                .log().everything(true)  // 输出 request 相关日志
                 .baseUri("https://jsonplaceholder.typicode.com")
                 .header("Content-Type", "application/json")
 
@@ -1031,59 +1009,17 @@ import io.restassured.filter.log.ResponseLoggingFilter;
 
                 // Then
                 .then()
+                .log().everything(true)  // 输出 response 相关日志
                 .statusCode(200)
     }
-```
-
-##### 局部日志代码示例
-
-```java
-package com.example;
-
-import io.restassured.RestAssured;
-import io.restassured.config.LogConfig;
-import io.restassured.filter.log.LogDetail;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
-
-import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.equalTo;
-
-public class TestDemo {
-    private LogConfig logConfig;
-
-    @BeforeClass
-    public void setUp() {
-        // 在 @BeforeClass 中定义 LogConfig 配置
-        logConfig = LogConfig.logConfig()
-                .enableLoggingOfRequestAndResponseIfValidationFails(LogDetail.ALL)
-                .enablePrettyPrinting(true);
-    }
-    @Test(description = "Verify that the Get Post API returns correctly")
-    public void verifyGetAPI() {
-
-        // Given
-        given()
-                .config(RestAssured.config().logConfig(logConfig))
-                .baseUri("https://jsonplaceholder.typicode.com")
-                .header("Content-Type", "application/json")
-
-                // When
-                .when()
-                .get("/posts/1")
-
-                // Then
-                .then()
-                .statusCode(200)
-    }
-}
 ```
 
 ##### 查看局部日志输出
 
 - 打开本项目的 Terminal 窗口，执行以下命令运行测试脚本
 - 查看日志输出
- @Todo
+
+![report1](https://cdn.jsdelivr.net/gh/naodeng/blogimg@master/uPic/GxZyyG.png)
 
 #### LogConfig 配置说明
 

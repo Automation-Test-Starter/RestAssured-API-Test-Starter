@@ -940,7 +940,7 @@ In RestAssured, you can make localized logging configurations to enable or disab
 
 ##### Steps to add Localized logging configuration
 
-- 在想要打印日志的测试方法中启用了添加日志配置
+- Add logging configuration is enabled in the test method for which you want to print logs
 
 ```java
     @Test(description = "Verify that the Get Post API returns correctly")
