@@ -7,6 +7,7 @@
 // add java plugin
 plugins {
     id 'java'
+    id("io.qameta.allure") version "2.11.2"
 }
 
 // Repository Source Configuration
@@ -15,18 +16,20 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'io.rest-assured:rest-assured:5.3.1' // add rest-assured dependencies
+    testImplementation 'io.rest-assured:rest-assured:5.3.2' // add rest-assured dependencies
     testImplementation 'org.testng:testng:7.8.0' // Add test framework TestNG dependency
     implementation 'org.uncommons:reportng:1.1.4' // testng report dependency
     implementation 'org.slf4j:slf4j-api:2.0.9' // Add test log dependency
     implementation 'org.slf4j:slf4j-simple:2.0.9' // Add test log dependency
     implementation group: 'com.google.inject', name: 'guice', version: '7.0.0'
+    implementation 'io.qameta.allure:allure-testng:2.24.0' // Add allure report dependency
+    implementation 'io.qameta.allure:allure-rest-assured:2.24.0' // Add allure report dependency
 }
 
 // test config
 test {
-    reports.html.required = false // Disable gradle HTML report generation
-    reports.junitXml.required = false // Disable gradle JUnit XML report generation
+    reports.html.required = false // 禁用 HTML 报告生成
+    reports.junitXml.required = false // 禁用 JUnit XML 报告生成
     // Tell Gradle to use TestNG as a testing framework.
     useTestNG() {
         useDefaultListeners = true
