@@ -1,9 +1,8 @@
+<div align="right"><strong>🇨🇳中文</a></strong>  | <strong><a href="./README_EN.md">🇬🇧English</strong></div>
 
 # RestAssured 接口自动化测试快速启动项目
 
 关于使用 RestAssured 进行 API 测试的快速启动项目介绍文档。
-
-**中文** | [English](/README_EN.md)
 
 - [RestAssured 接口自动化测试开始启动项目](#restassured-接口自动化测试开始启动项目)
   - [RestAssured 介绍](#restassured-介绍)
