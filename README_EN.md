@@ -10,7 +10,7 @@ Introductory documentation for a quick-start project on API testing with RestAss
     - [Gradle-built versions](#gradle-built-versions)
     - [Maven-built versions](#maven-built-versions)
   - [Project dependency](#project-dependency)
-  - [Building a REST Assured interface test project from 0 to 1](#building-a-rest-assured-interface-test-project-from-0-to-1)
+  - [Building a REST Assured API test project from 0 to 1](#building-a-rest-assured-api-test-project-from-0-to-1)
     - [Gradle version](#gradle-version)
       - [Initialize an empty Gradle project](#initialize-an-empty-gradle-project)
       - [Configuration build.gradle](#configuration-buildgradle)
@@ -159,7 +159,7 @@ In this example directory structure:
 - Gradle 6.0+ or Maven 3.0+, I'm using Gradle 8.44 and Maven 3.9.5
 - RestAssured 4.3.3+, I'm using the latest version 5.3.2
 
-## Building a REST Assured interface test project from 0 to 1
+## Building a REST Assured API test project from 0 to 1
 
 REST Assured supports both Gradle and Maven build tools, you can choose one of them according to your preference. Below is a description of the initialization process for Gradle and Maven build tools.
 
