@@ -1,5 +1,5 @@
 
-# RestAssured 接口自动化测试开始启动项目
+# RestAssured 接口自动化测试快速启动项目
 
 关于使用 RestAssured 进行 API 测试的快速启动项目介绍文档。
 
