@@ -41,7 +41,7 @@ Introductory documentation for a quick-start project on API testing with RestAss
       - [response body assertion](#response-body-assertion)
         - [json assertion](#json-assertion)
         - [XML assertion](#xml-assertion)
-      - [Cookie 断言](#cookie-断言)
+      - [Cookie assertion](#cookie-assertion)
       - [Status Code Assertion](#status-code-assertion)
       - [Header Assertion](#header-assertion)
       - [Content-Type Assertion](#content-type-assertion)
@@ -660,7 +660,7 @@ then().
 with().parameters("firstName", "John", "lastName", "Doe").when().post("/greetXML").then().body("greeting.firstName", equalTo("John"), "greeting.lastName", equalTo("Doe"));
 ```
 
-#### Cookie 断言
+#### Cookie assertion
 
 - Asserts whether the value of the cookie is equal to cookieValue. For example:
 
