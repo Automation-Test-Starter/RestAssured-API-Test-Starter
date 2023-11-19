@@ -1,177 +1,179 @@
-<div align="right"><strong>🇨🇳中文</a></strong>  | <strong><a href="./README_EN.md">🇬🇧English</strong></div>
+<!-- markdownlint-disable MD041 -->
+<!-- markdownlint-disable MD033 -->
+<div align="right"><strong><a href="./README_ZH.md">🇨🇳中文</a></strong>  | <strong>🇬🇧English</strong></div>
+<!-- markdownlint-disable MD041 -->
+<!-- markdownlint-disable MD033 -->
 
-# RestAssured 接口自动化测试快速启动项目
+# RestAssured-API-Test-Starter
 
-关于使用 RestAssured 进行 API 测试的快速启动项目介绍文档。
+Introductory documentation for a quick-start project on API testing with RestAssured.
 
-- [RestAssured 接口自动化测试开始启动项目](#restassured-接口自动化测试开始启动项目)
-  - [RestAssured 介绍](#restassured-介绍)
-  - [项目结构](#项目结构)
-    - [Gradle 构建的版本](#gradle-构建的版本)
-    - [Maven 构建的版本](#maven-构建的版本)
-  - [项目依赖](#项目依赖)
-  - [从 0 到 1 搭建 REST Assured 接口测试项目](#从-0-到-1-搭建-rest-assured-接口测试项目)
-    - [Gradle 版本](#gradle-版本)
-      - [创建一个空的 Gradle 工程](#创建一个空的-gradle-工程)
-      - [配置项目 build.gradle](#配置项目-buildgradle)
-      - [testng.xml 配置](#testngxml-配置)
-      - [gradle build 项目并初始化](#gradle-build-项目并初始化)
-      - [初始化目录](#初始化目录)
-      - [demo 测试接口](#demo-测试接口)
-        - [Get 接口](#get-接口)
-        - [Post 接口](#post-接口)
-      - [编写脚本](#编写脚本)
-      - [调试脚本](#调试脚本)
-      - [查看测试报告](#查看测试报告)
-        - [命令行报告](#命令行报告)
-        - [testng html 报告](#testng-html-报告)
-    - [Maven 版本](#maven-版本)
-      - [创建一个空的 Maven 工程](#创建一个空的-maven-工程)
-      - [配置项目 pom.xml](#配置项目-pomxml)
-      - [testng.xml 配置](#testngxml-配置-1)
-      - [初始化目录](#初始化目录-1)
-      - [demo 测试接口](#demo-测试接口-1)
-        - [Get 接口](#get-接口-1)
-        - [Post 接口](#post-接口-1)
-      - [编写脚本](#编写脚本-1)
-      - [调试脚本](#调试脚本-1)
-      - [查看测试报告](#查看测试报告-1)
-        - [命令行报告](#命令行报告-1)
-        - [testng html 报告](#testng-html-报告-1)
-  - [进阶用法](#进阶用法)
-    - [验证响应数据](#验证响应数据)
-      - [响应体断言](#响应体断言)
-        - [json 格式断言](#json-格式断言)
-        - [xml 格式断言](#xml-格式断言)
-      - [Cookie 断言](#cookie-断言)
-      - [状态码 Status Code 断言](#状态码-status-code-断言)
-      - [Header 断言](#header-断言)
-      - [Content-Type 断言](#content-type-断言)
-      - [内容全匹配断言](#内容全匹配断言)
-      - [响应时间断言](#响应时间断言)
-    - [文件上传](#文件上传)
-    - [Logging 日志](#logging-日志)
-      - [全局日志配置](#全局日志配置)
-        - [添加全局日志步骤](#添加全局日志步骤)
-        - [全局日志代码示例](#全局日志代码示例)
-        - [查看全局日志输出](#查看全局日志输出)
-      - [局部日志配置](#局部日志配置)
-        - [添加日志步骤](#添加日志步骤)
-        - [查看局部日志输出](#查看局部日志输出)
-      - [LogConfig 配置说明](#logconfig-配置说明)
-      - [Request Logging 请求日志记录](#request-logging-请求日志记录)
-      - [Response Logging 响应日志记录](#response-logging-响应日志记录)
-      - [只在验证失败时记录日志](#只在验证失败时记录日志)
-      - [Header 黑名单配置](#header-黑名单配置)
-    - [Filters 过滤器](#filters-过滤器)
-      - [Ordered Filters 有序过滤器](#ordered-filters-有序过滤器)
-      - [Response Builder 响应生成器](#response-builder-响应生成器)
-    - [持续集成](#持续集成)
-      - [接入 github action](#接入-github-action)
-        - [Gradle 版本接入 github action](#gradle-版本接入-github-action)
-        - [Maven 版本接入 github action](#maven-版本接入-github-action)
-    - [集成 allure 测试报告](#集成-allure-测试报告)
-      - [allure 简介](#allure-简介)
-      - [集成步骤](#集成步骤)
-        - [Maven 版本集成 allure](#maven-版本集成-allure)
-        - [Gradle 版本集成 allure](#gradle-版本集成-allure)
-  - [参考资料](#参考资料)
+- [RestAssured-API-Test-Starter](#restassured-api-test-starter)
+  - [Introduction of RestAssured](#introduction-of-restassured)
+  - [Project structure](#project-structure)
+    - [Gradle-built versions](#gradle-built-versions)
+    - [Maven-built versions](#maven-built-versions)
+  - [Project dependency](#project-dependency)
+  - [Building a REST Assured API test project from 0 to 1](#building-a-rest-assured-api-test-project-from-0-to-1)
+    - [Gradle version](#gradle-version)
+      - [Initialize an empty Gradle project](#initialize-an-empty-gradle-project)
+      - [Configuration build.gradle](#configuration-buildgradle)
+      - [testng.xml configuration](#testngxml-configuration)
+      - [gradle build project and initialize](#gradle-build-project-and-initialize)
+      - [initialization project directory](#initialization-project-directory)
+      - [Introduction of demo test API](#introduction-of-demo-test-api)
+        - [Get API](#get-api)
+        - [Post API](#post-api)
+      - [Writing Test cases](#writing-test-cases)
+      - [Debugging test cases](#debugging-test-cases)
+      - [Viewing Test Reports](#viewing-test-reports)
+        - [Command Line Report](#command-line-report)
+        - [testng html Report](#testng-html-report)
+    - [Maven version](#maven-version)
+      - [Initialize an empty Maven project](#initialize-an-empty-maven-project)
+      - [Configuration pom.xml](#configuration-pomxml)
+      - [Configuration testng.xml](#configuration-testngxml)
+      - [initialization maven project directory](#initialization-maven-project-directory)
+      - [The api used by Demo](#the-api-used-by-demo)
+      - [Writing Test cases](#writing-test-cases-1)
+      - [Debugging test cases](#debugging-test-cases-1)
+      - [Viewing Test Reports](#viewing-test-reports-1)
+        - [terminal report](#terminal-report)
+        - [testng html report](#testng-html-report-1)
+  - [Advanced Usage](#advanced-usage)
+    - [Verifying Response Data](#verifying-response-data)
+      - [response body assertion](#response-body-assertion)
+        - [json assertion](#json-assertion)
+        - [XML assertion](#xml-assertion)
+      - [Cookie assertion](#cookie-assertion)
+      - [Status Code Assertion](#status-code-assertion)
+      - [Header Assertion](#header-assertion)
+      - [Content-Type Assertion](#content-type-assertion)
+      - [Full body/content matching Assertion](#full-bodycontent-matching-assertion)
+      - [Measuring Response Time](#measuring-response-time)
+    - [File Upload](#file-upload)
+    - [Logging](#logging)
+      - [Global logging configuration](#global-logging-configuration)
+        - [Steps to add global logging configuration](#steps-to-add-global-logging-configuration)
+        - [Global Logging Code Example](#global-logging-code-example)
+        - [Viewing Global Log Output](#viewing-global-log-output)
+      - [Localized logging configuration](#localized-logging-configuration)
+        - [Steps to add Localized logging configuration](#steps-to-add-localized-logging-configuration)
+        - [Viewing Localized Log Output](#viewing-localized-log-output)
+      - [LogConfig Configuration Description](#logconfig-configuration-description)
+      - [Request Logging](#request-logging)
+      - [Response Logging](#response-logging)
+      - [Log if validation fails](#log-if-validation-fails)
+      - [Header Blacklist Configuration](#header-blacklist-configuration)
+    - [Filters](#filters)
+      - [Ordered Filters](#ordered-filters)
+      - [Response Builder](#response-builder)
+    - [CI/CD integration](#cicd-integration)
+      - [integration github action](#integration-github-action)
+        - [The Gradle version integration github action](#the-gradle-version-integration-github-action)
+        - [The Maven version integration github action](#the-maven-version-integration-github-action)
+    - [Integrating allure test reports](#integrating-allure-test-reports)
+      - [allure Introduction](#allure-introduction)
+      - [Integration steps](#integration-steps)
+        - [The Maven version integration of allure](#the-maven-version-integration-of-allure)
+        - [The Gradle version of allure integration](#the-gradle-version-of-allure-integration)
+  - [Reference](#reference)
 
-## RestAssured 介绍
+## Introduction of RestAssured
 
-REST Assured 是一种用于测试 RESTful API 的 Java 测试框架，它使开发人员/测试人员能够轻松地编写和执行 API 测试。它的设计旨在使 API 测试变得简单和直观，同时提供了丰富的功能和灵活性。以下是 REST Assured 的一些重要特点和用法：
+REST Assured is a Java testing framework for testing RESTful APIs that enables developers/testers to easily write and execute API tests. It is designed to make API testing simple and intuitive, while providing rich functionality and flexibility. The following are some of the key features and uses of REST Assured:
 
-1. 发起 HTTP 请求：REST Assured 允许你轻松地构建和发起 HTTP GET、POST、PUT、DELETE 等类型的请求。你可以指定请求的 URL、头部、参数、体等信息。
+1. Initiating HTTP requests: REST Assured allows you to easily build and initiate HTTP GET, POST, PUT, DELETE and other types of requests. You can specify the request's URL, headers, parameters, body, and other information.
 
-2. 链式语法：REST Assured 使用链式语法，使测试代码更加可读和易于编写。你可以按照一种自然的方式描述你的测试用例，而不需要编写大量的代码。
+2. Chained Syntax: REST Assured uses chained syntax to make test code more readable and easy to write. You can describe your test cases in a natural way without writing tons of code.
 
-3. 断言和校验：REST Assured 提供了丰富的校验方法，可以用于验证 API 响应的状态码、响应体、响应头等。你可以根据你的测试需求添加多个断言。
+3. Assertions and Checksums: REST Assured provides a rich set of checksums that can be used to validate API response status codes, response bodies, response headers, and so on. You can add multiple assertions according to your testing needs.
 
-4. 支持多种数据格式：REST Assured 支持多种数据格式，包括 JSON、XML、HTML、Text 等。你可以使用适当的方法来处理不同格式的响应数据。
+4. Support for multiple data formats: REST Assured supports a variety of data formats, including JSON, XML, HTML, Text and so on. You can use appropriate methods to handle different formats of response data.
 
-5. 集成 BDD（行为驱动开发）：REST Assured 可以与 BDD 框架（如 Cucumber）结合使用，使你可以更好地描述和管理测试用例。
+5. Integration with BDD (Behavior-Driven Development): REST Assured can be used in conjunction with BDD frameworks (such as Cucumber), allowing you to better describe and manage test cases.
 
-6. 模拟 HTTP 服务器：REST Assured 还包括一个模拟 HTTP 服务器的功能，允许你模拟 API 的行为以进行端到端测试。
+6. Simulate HTTP Server: REST Assured also includes a simulation of an HTTP server, allowing you to simulate the behavior of an API for end-to-end testing.
 
-7. 可扩展性：REST Assured 可以通过插件和扩展进行定制，以满足特定的测试需求。
+7. Extensibility: REST Assured can be customized with plug-ins and extensions to meet specific testing needs.
 
-总的来说，REST Assured 是一个功能强大且易于使用的 API 测试框架，它可以帮助你轻松地进行 RESTful API 测试，并提供了许多工具来验证 API 的正确性和性能。无论是初学者还是有经验的开发人员/测试人员，REST Assured 都是一个非常有价值的工具，可用于快速的上手 API 自动化 测试。
+Overall, REST Assured is a powerful and easy-to-use API testing framework that helps you easily perform RESTful API testing and provides many tools to verify the correctness and performance of an API. Whether you are a beginner or an experienced developer/tester, REST Assured is a valuable tool for quickly getting started with API automation testing.
 
-## 项目结构
+## Project structure
 
-### Gradle 构建的版本
-
-```text
-- src
-  - main
-    - java
-      - (应用的主要源代码)
-  - test
-    - java
-      - api
-        - (REST Assured 测试代码)
-          - UsersAPITest.java
-          - ProductsAPITest.java
-        - util
-          - TestConfig.java
-    - resources
-      - (配置文件、测试数据等)
-  - (其他项目文件和资源)
-- build.gradle (Gradle 项目配置文件)
-```
-
-在这个示例目录结构中：
-
-- src/test/java/api 目录用于存放 REST Assured 的测试类，每个测试类通常涉及到一个或多个相关的 API 端点的测试。例如，UsersAPITest.java 和 ProductsAPITest.java 可以包含用户管理和产品管理的测试。
-- src/test/java/util 目录可用于存放测试中共享的工具类，例如用于配置 REST Assured 的 TestConfig.java。
-- src/test/resources 目录可以包含测试数据文件、配置文件等资源，这些资源可以在测试中使用。
-- build.gradle 是 gradle 项目的配置文件，它用于定义项目的依赖项、构建配置以及其他项目设置。
-
-### Maven 构建的版本
+### Gradle-built versions
 
 ```text
 - src
   - main
     - java
-      - (应用的主要源代码)
+      - (The main source code of the application)
+  - test
+    - test
+      - api
+        - (REST Assured test code)
+          - UsersAPITest.java
+          - ProductsAPITest.java
+        - TestConfig.java
+          - TestConfig.java
+    - resources
+      - (configuration files, test data, etc.)
+  - (other project files and resources)
+- build.gradle (Gradle project configuration file)
+```
+
+In this example directory structure:
+
+- src/test/java/api directory is used to hold REST Assured test classes, each of which typically involves tests for one or more related API endpoints. For example, UsersAPITest.java and ProductsAPITest.java could contain tests for user management and product management.
+- The src/test/java/util directory can be used to store tool classes that are shared among tests, such as TestConfig.java for configuring REST Assured.
+- The src/test/resources directory can contain test data files, configuration files, and other resources that can be used in tests.
+- build.gradle is the gradle project's configuration file, which is used to define the project's dependencies, build configuration, and other project settings.
+
+### Maven-built versions
+
+```text
+- src
+  - main
+    - java
+      - (The main source code of the application)
   - test
     - java
       - api
-        - (REST Assured 测试代码)
+        - (REST Assured test code)
           - UsersAPITest.java
           - ProductsAPITest.java
         - util
           - TestConfig.java
     - resources
-      - (配置文件、测试数据等)
-  - (其他项目文件和资源)
-- pom.xml (Maven 项目配置文件)
+      - (configuration files, test data, etc.)
+  - (other project files and resources)
+- pom.xml (Maven project configuration file)
 ```
 
-在这个示例目录结构中：
+In this example directory structure:
 
-- src/test/java/api 目录用于存放 REST Assured 的测试类，每个测试类通常涉及到一个或多个相关的 API 端点的测试。例如，UsersAPITest.java 和 ProductsAPITest.java 可以包含用户管理和产品管理的测试。
-- src/test/java/util 目录可用于存放测试中共享的工具类，例如用于配置 REST Assured 的 TestConfig.java。
-- src/test/resources 目录可以包含测试数据文件、配置文件等资源，这些资源可以在测试中使用。
-- pom.xml 是 Maven 项目的配置文件，它用于定义项目的依赖项、构建配置以及其他项目设置。
+- src/test/java/api directory is used to hold REST Assured test classes, each of which typically involves tests for one or more related API endpoints. For example, UsersAPITest.java and ProductsAPITest.java could contain tests for user management and product management.
+- The src/test/java/util directory can be used to store tool classes that are shared among tests, such as TestConfig.java for configuring REST Assured.
+- The src/test/resources directory can contain test data files, configuration files, and other resources that can be used in the tests.
+- pom.xml is a Maven project configuration file that is used to define project dependencies, build configurations, and other project settings.
 
-## 项目依赖
+## Project dependency
 
-- JDK 1.8+ ，我使用的 JDK 19
-- Gradle 6.0+ 或 Maven 3.0+，我使用的 Gradle 8.44 和 Maven 3.9.5
-- RestAssured 4.3.3+，我使用的是最新的 5.3.1 版本
+- JDK 1.8+, I'm using JDK 19
+- Gradle 6.0+ or Maven 3.0+, I'm using Gradle 8.44 and Maven 3.9.5
+- RestAssured 4.3.3+, I'm using the latest version 5.3.2
 
-## 从 0 到 1 搭建 REST Assured 接口测试项目
+## Building a REST Assured API test project from 0 to 1
 
-REST Assured 支持 Gradle 和 Maven 两种构建工具，你可以根据自己的喜好选择其中一种。下面分别介绍 Gradle 和 Maven 两种构建工具的项目初始化过程。
+REST Assured supports both Gradle and Maven build tools, you can choose one of them according to your preference. Below is a description of the initialization process for Gradle and Maven build tools.
 
-本项目使用 Gradle 8.44 和 Maven 3.9.5 进行构建，如果你使用的是其他版本，可能会有不同。
+This project is built using Gradle 8.44 and Maven 3.9.5, if you are using other versions, it may be different.
 
-### Gradle 版本
+### Gradle version
 
-可参考 demo 项目：<https://github.com/Automation-Test-Starter/RestAssured-gradle-demo>
+See the demo project at <https://github.com/Automation-Test-Starter/RestAssured-gradle-demo>.
 
-#### 创建一个空的 Gradle 工程
+#### Initialize an empty Gradle project
 
 ```bash
 mkdir RestAssured-gradle-demo
@@ -179,57 +181,57 @@ cd RestAssured-gradle-demo
 gradle init
 ```
 
-#### 配置项目 build.gradle
+#### Configuration build.gradle
 
-demo 项目引入了 testNG 测试框架，仅供参考
+The demo project introduces the testNG testing framework. For reference only.
 
-- 在项目根目录下创建一个 build.gradle 文件，用于配置项目
-- 示例配置如下，可供参考
+- Create a build.gradle file in the project root directory to configure the project.
+- For reference, the following is a sample configuration
 
 ```groovy
-// 插件配置
+// plugins configuration
 plugins {
-    id 'java' // 使用 java 插件
+    id 'java' // use java plugin
 }
 
-// 仓库资源配置
+// repositories configuration
 repositories {
-  mavenCentral() // 使用 maven中央版本库源
+  mavenCentral() // user maven central repository
 }
 
-// 项目依赖配置
+// dependencies configuration
 dependencies {
-    testImplementation 'io.rest-assured:rest-assured:5.3.1' // 添加rest-assured依赖
-    testImplementation 'org.testng:testng:7.8.0' // 添加TestNG测试框架依赖
-    implementation 'org.uncommons:reportng:1.1.4' // 添加testng 测试报告依赖
-    implementation 'org.slf4j:slf4j-api:2.0.9' // 添加测试日志依赖
-    implementation 'org.slf4j:slf4j-simple:2.0.9' // 添加测试日志依赖
+    testImplementation 'io.rest-assured:rest-assured:5.3.1' // add rest-assured dependency
+    testImplementation 'org.testng:testng:7.8.0' // add testng testing framework dependency
+    implementation 'org.uncommons:reportng:1.1.4' // add testng reportng dependency
+    implementation 'org.slf4j:slf4j-api:2.0.9' // add slf4j dependency for test logging
+    implementation 'org.slf4j:slf4j-simple:2.0.9' // add slf4j dependency for test logging
     implementation group: 'com.google.inject', name: 'guice', version: '7.0.0'
 }
 
-// 项目测试配置
+// test configuration
 test {
-    reports.html.required = false // 禁用 gradle 原生HTML 报告生成
-    reports.junitXml.required = false // 禁用 gradle 原生 JUnit XML 报告生成
-    // 告诉 Gradle 使用 TestNG 作为测试框架
+    reports.html.required = false // set gradle html report to false
+    reports.junitXml.required = false // set gradle junitXml report to false
+    // use testng testing framework
     useTestNG() {
         useDefaultListeners = true
-        suites 'src/test/resources/testng.xml' // 声明 testng 的 xml 配置文件路径
+        suites 'src/test/resources/testng.xml' // set testng.xml file path
     }
-    testLogging.showStandardStreams = true // 将测试日志输出到控制台
-    testLogging.events "passed", "skipped", "failed" // 定义测试日志事件类型
+    testLogging.showStandardStreams = true // output test log to console
+    testLogging.events "passed", "skipped", "failed" // deny output test log to console
 }
 ```
 
-> 可 copy 本项目中的 build.gradle 文件内容，更多配置可参考[官方文档](https://github.com/rest-assured/rest-assured/wiki/GettingStarted#rest-assured)
+> You can copy the contents of the build.gradle file in this project. For more configuration refer to [Official Documentation](https://github.com/rest-assured/rest-assured/wiki/GettingStarted#rest-assured)
 
-#### testng.xml 配置
+#### testng.xml configuration
 
-- 在 src/test目录下创建一个 resources 目录，用于存放测试配置文件
+- Create a resources directory under the src/test directory to store test configuration files.
 
-- 在 resources 目录下创建一个 testng.xml 文件，用于配置 TestNG 测试框架
+- Create a testng.xml file in the resources directory to configure the TestNG test framework.
 
-- 示例配置如下，可供参考
+- For reference, the following is a sample configuration
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -237,29 +239,29 @@ test {
 <suite name="restAssured-gradleTestSuite">
 <test thread-count="1" name="Demo">
     <classes>
-        <class name="com.example.TestDemo"/> <!-- 测试脚本 class-->
+        <class name="com.example.TestDemo"/> <!-- test case class-->
     </classes>
 </test> <!-- Test -->
 </suite> <!-- Suite -->
 ```
 
-#### gradle build 项目并初始化
+#### gradle build project and initialize
 
-- 用编辑器打开本项目 Terminal 窗口，执行以下命令确认项目 build 成功
+- Open the Terminal window of the project with an editor and execute the following command to confirm that the project build was successful
 
 ```bash
 gradle build
 ```
 
-- 初始化完成：完成向导后，Gradle 将在项目目录中生成一个基本的 Gradle 项目结构
+- Initialization complete: After completing the wizard, Gradle will generate a basic Gradle project structure in the project directory
   
-#### 初始化目录
+#### initialization project directory
 
-目录结构可参考 >> [项目结构](#项目结构)
+The directory structure can be found in >> [Project structure](#project-structure)
 
-在项目的测试源目录下创建一个新的测试类。默认情况下，Gradle 通常将测试源代码放在 src/test/java 目录中。你可以在该目录下创建测试类的包，并在包中创建新的测试类
+Create a new test class in the project's test source directory. By default, Gradle usually places the test source code in the src/test/java directory. You can create a package of test classes in that directory and create a new test class in the package
 
-创建一个 TestDemo 的测试类，可以按以下结构创建文件
+To create a test class for TestDemo, you can create files with the following structure
   
 ```text
 src
@@ -270,19 +272,19 @@ src
                 └── TestDemo.java
 ```
 
-#### demo 测试接口
+#### Introduction of demo test API
 
-##### Get 接口
+##### Get API
 
 - HOST: https://jsonplaceholder.typicode.com
-- 接口地址：/posts/1
-- 请求方式：GET
-- 请求参数：无
-- 请求头："Content-Type": "application/json; charset=utf-8"
-- 请求体：无
-- 返回状态码：200
-- 返回头："Content-Type": "application/json; charset=utf-8"
-- 返回 body：
+- API path: /posts/1
+- Request method: GET
+- Request Parameters: None
+- Request header: "Content-Type": "application/json; charset=utf-8"
+- Request Body: None
+- Response status code: 200
+- Response header: "Content-Type": "application/json; charset=utf-8"
+- Response body:
 
 ```json
 {
@@ -293,14 +295,15 @@ src
 }
 ```
 
-##### Post 接口
+##### Post API
 
 - HOST: https://jsonplaceholder.typicode.com
-- 接口地址：/posts
-- 请求方式：POST
-- 请求参数：无
-- 请求头："Content-Type": "application/json; charset=utf-8"
-- 请求体：raw json 格式 body 内容如下：
+- API path:/posts
+- Request method: POST
+- Request Parameters: None
+- Request header:"Content-Type": "application/json; charset=utf-8"
+- Request Body:raw json format
+- Request Body:
 
 ```json
 {
@@ -310,9 +313,9 @@ src
 }
 ```
 
-- 返回状态码：201
-- 返回头："Content-Type": "application/json; charset=utf-8"
-- 返回 body：
+- Response status code: 201
+- Response header:"Content-Type": "application/json; charset=utf-8"
+- Response body:
 
 ```json
 {
@@ -323,11 +326,11 @@ src
 }
 ```
 
-#### 编写脚本
+#### Writing Test cases
 
-- 打开 TestDemo.java 文件，开始编写测试脚本
+- Open the TestDemo.java file and start writing the test script.
 
-- 示例脚本如下，可供参考
+- The example script is as follows. For reference
 
 ```java
 package com.example;
@@ -385,47 +388,47 @@ public class TestDemo {
 }
 ```
 
-#### 调试脚本
+#### Debugging test cases
 
-- 打开本项目的 Terminal 窗口，执行以下命令运行测试脚本
+- Open the Terminal window for this project and run the test script by executing the following command
 
 ```bash
 gradle test
 ```
 
-#### 查看测试报告
+#### Viewing Test Reports
 
-##### 命令行报告
+##### Command Line Report
 
 ![gradle-test-report1](https://cdn.jsdelivr.net/gh/naodeng/blogimg@master/uPic/gradle-report1.png)
 
-##### testng html 报告
+##### testng html Report
 
-- 打开项目 build/reports/tests/test 目录
-- 点击 index.html 文件，查看测试报告
+- Open the project build/reports/tests/test directory.
+- Click on the index.html file to view the test report.
 
 ![gradle-test-report2](https://cdn.jsdelivr.net/gh/naodeng/blogimg@master/uPic/gradle-report2.png)
 
-### Maven 版本
+### Maven version
 
-可参考 demo 项目：<https://github.com/Automation-Test-Starter/RestAssured-maven-demo>
+See the demo project at <https://github.com/Automation-Test-Starter/RestAssured-maven-demo>
 
-#### 创建一个空的 Maven 工程
+#### Initialize an empty Maven project
 
 ```bash
 mvn archetype:generate -DgroupId=com.example -DartifactId=RestAssured-maven-demo -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
 ```
 
-初始化完成：完成向导后，Maven 将在新建项目目录并生成一个基本的 Maven 项目结构
+Initialization complete: After completing the wizard, Maven will create a new project directory and a basic Maven project structure
 
-#### 配置项目 pom.xml
+#### Configuration pom.xml
 
-在 项目中 pom.xml 文件中添加以下内容
+Add the following to the pom.xml file in your project
 
-> 可 copy 本项目中的 pom.xml 文件内容，更多配置可参考[官方文档](https://github.com/rest-assured/rest-assured/wiki/GettingStarted#rest-assured)
+> You can copy the contents of the pom.xml file in this project. For more information on configuration, please refer to the [official documentation](https://github.com/rest-assured/rest-assured/wiki/GettingStarted#rest-assured).
 
 ```xml
-<!-- 依赖配置 -->
+<!-- dependencies config -->
   <dependencies>
     <!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
     <dependency>
@@ -442,7 +445,7 @@ mvn archetype:generate -DgroupId=com.example -DartifactId=RestAssured-maven-demo
       <scope>test</scope>
     </dependency>
   </dependencies>
-  <!-- 插件配置 -->
+  <!-- plugin config -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
@@ -455,13 +458,13 @@ mvn archetype:generate -DgroupId=com.example -DartifactId=RestAssured-maven-demo
       </plugin>
 ```
 
-#### testng.xml 配置
+#### Configuration testng.xml
 
-- 在 src/test目录下创建一个 resources 目录，用于存放测试配置文件
+- Create a resources directory under the src/test directory to store test configuration files.
 
-- 在 resources 目录下创建一个 testng.xml 文件，用于配置 TestNG 测试框架
+- Create a testng.xml file in the resources directory to configure the TestNG test framework.
 
-- 示例配置如下，可供参考
+- For reference, the following is a sample configuration
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -469,19 +472,19 @@ mvn archetype:generate -DgroupId=com.example -DartifactId=RestAssured-maven-demo
 <suite name="restAssured-gradleTestSuite">
 <test thread-count="1" name="Demo">
     <classes>
-        <class name="com.example.TestDemo"/> <!-- 测试脚本 class-->
+        <class name="com.example.TestDemo"/> <!-- test case class-->
     </classes>
 </test> <!-- Test -->
 </suite> <!-- Suite -->
 ```
 
-#### 初始化目录
+#### initialization maven project directory
 
-目录结构可参考 >> [项目结构](#项目结构)
+The directory structure can be found in >> [Project structure](#project-structure)
 
-在项目的测试源目录下创建一个新的测试类。默认情况下，Gradle 通常将测试源代码放在 src/test/java 目录中。你可以在该目录下创建测试类的包，并在包中创建新的测试类
+Create a new test class in the project's test source directory. By default, Gradle usually places the test source code in the src/test/java directory. You can create a package of test classes in that directory and create a new test class in the package
 
-创建一个 TestDemo 的测试类，可以按以下结构创建文件
+To create a test class for TestDemo, you can create files with the following structure
   
 ```text
 src
@@ -492,64 +495,15 @@ src
                 └── TestDemo.java
 ```
 
-#### demo 测试接口
+#### The api used by Demo
 
-##### Get 接口
+referable to >> [Introduction of demo test API](#introduction-of-demo-test-api)
 
-- HOST: https://jsonplaceholder.typicode.com
-- 接口地址：/posts/1
-- 请求方式：GET
-- 请求参数：无
-- 请求头："Content-Type": "application/json; charset=utf-8"
-- 请求体：无
-- 返回状态码：200
-- 返回头："Content-Type": "application/json; charset=utf-8"
-- 返回 body：
+#### Writing Test cases
 
-```json
-{
-    "userId": 1,
-    "id": 1,
-    "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-    "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
-}
-```
+- Open the TestDemo.java file and start writing the test script.
 
-##### Post 接口
-
-- HOST: https://jsonplaceholder.typicode.com
-- 接口地址：/posts
-- 请求方式：POST
-- 请求参数：无
-- 请求头："Content-Type": "application/json; charset=utf-8"
-- 请求体：raw json 格式 body 内容如下：
-
-```json
-{
-    "title": "foo",
-    "body": "bar",
-    "userId": 1
-}
-```
-
-- 返回状态码：201
-- 返回头："Content-Type": "application/json; charset=utf-8"
-- 返回 body：
-
-```json
-{
-    "title": "foo",
-    "body": "bar",
-    "userId": 1,
-    "id": 101
-}
-```
-
-#### 编写脚本
-
-- 打开 TestDemo.java 文件，开始编写测试脚本
-
-- 示例脚本如下，可供参考
+- The example script is as follows. For reference
 
 ```java
 package com.example;
@@ -607,38 +561,38 @@ public class TestDemo {
 }
 ```
 
-#### 调试脚本
+#### Debugging test cases
 
-- 打开本项目的 Terminal 窗口，执行以下命令运行测试脚本
+- Open the Terminal window for this project and run the test script by executing the following command
 
 ```bash
 mvn test
 ```
 
-#### 查看测试报告
+#### Viewing Test Reports
 
-##### 命令行报告
+##### terminal report
 
 ![maven-test-report1](https://cdn.jsdelivr.net/gh/naodeng/blogimg@master/uPic/maven-report1.png)
 
-##### testng html 报告
+##### testng html report
 
-- 打开项目 target/surefire-reports 目录
-- 点击 index.html 文件，查看测试报告
+- Open the project target/surefire-reports directory.
+- Click on the index.html file to view the test report.
 
 ![maven-test-report2](https://cdn.jsdelivr.net/gh/naodeng/blogimg@master/uPic/maven-report2.png)
 
-## 进阶用法
+## Advanced Usage
 
-### 验证响应数据
+### Verifying Response Data
 
-您还可以验证状态码，状态行，Cookie，headers，内容类型和正文。
+You can verify Response status code, Response status line, Response cookies, Response headers, Response content type and Response body.
 
-#### 响应体断言
+#### response body assertion
 
-##### json 格式断言
+##### json assertion
   
-假设某个 get 请求 (http://localhost:8080/lotto) 返回 JSON 如下：
+Assume that the GET request (to <http://localhost:8080/lotto>) returns JSON as:
 
 ```json
 {
@@ -656,25 +610,25 @@ mvn test
 }
 ```
 
-REST assured 可以帮您轻松地进行 get 请求并对响应信息进行处理。
+REST assured makes it easy to make get requests and process response messages.
 
-- 断言 lottoId 的值是否等于 5，示例：
+- Asserts whether the value of lottoId is equal to 5. For example:
 
 ```java
 get("/lotto").then().body("lotto.lottoId", equalTo(5));
 ```
 
-- 断言 winnerId 的取值包括 23 和 54，示例：
+- Assertion The values for winnerId include 23 and 54. For example:
 
 ```java
 get("/lotto").then().body("lotto.winners.winnerId", hasItems(23, 54));
 ```
 
-> 提醒一下：`equalTo` 和 `hasItems`是 Hamcrest matchers 提供的方法，所以需要静态导入入 `org.hamcrest.Matchers`。
+> Note: `equalTo` and `hasItems` are Hamcrest matchers which you should statically import from `org.hamcrest.Matchers`.
 
-##### xml 格式断言
+##### XML assertion
 
-XML 可以一种通过简单的方式解析。假设一个 POST 请求`http://localhost:8080/greetXML`返回：
+XML can be verified in a similar way. Imagine that a POST request to <http://localhost:8080/greetXML> returns:
 
 ```xml
 <greeting>
@@ -683,7 +637,7 @@ XML 可以一种通过简单的方式解析。假设一个 POST 请求`http://lo
 </greeting>
 ```
 
-- 断言 firstName 是否返回正确，示例：
+- Asserts whether the firstName is returned correctly. For example:
 
 ```java
 given().
@@ -694,7 +648,7 @@ then().
          body("greeting.firstName", equalTo("John")).
 ```
 
-- 同时断言 firstname 和 lastname 是否返回正确，示例：
+- Assert that firstname and lastname are returned correctly. For example:
 
 ```java
 given().
@@ -710,106 +664,106 @@ then().
 with().parameters("firstName", "John", "lastName", "Doe").when().post("/greetXML").then().body("greeting.firstName", equalTo("John"), "greeting.lastName", equalTo("Doe"));
 ```
 
-#### Cookie 断言
+#### Cookie assertion
 
-- 断言 cookie 的值是否等于 cookieValue，示例：
+- Asserts whether the value of the cookie is equal to cookieValue. For example:
 
 ```java
 get("/x").then().assertThat().cookie("cookieName", "cookieValue")
 ```
 
-- 同时断言 多个 cookie 的值是否等于 cookieValue，示例：
+- Asserts whether the value of multiple cookies is equal to the cookieValue at the same time. For example:
 
 ```java
 get("/x").then().assertThat().cookies("cookieName1", "cookieValue1", "cookieName2", "cookieValue2")
 ```
 
-- 断言 cookie 的值是否包含 cookieValue，示例：
+- Asserts whether the value of the cookie contains a cookieValue. For example:
 
 ```java
 get("/x").then().assertThat().cookies("cookieName1", "cookieValue1", "cookieName2", containsString("Value2"))
 ```
 
-#### 状态码 Status Code 断言
+#### Status Code Assertion
 
-- 断言 状态码是否等于 200，示例：
+- Assertion Whether the status code is equal to 200. For example:
 
 ```java
 get("/x").then().assertThat().statusCode(200)
 ```
 
-- 断言 状态行是否为 something，示例：
+- Assertion Whether the status line is something. For example:
 
 ```java
 get("/x").then().assertThat().statusLine("something")
 ```
 
-- 断言 状态行是否包含 some，示例：
+- Assertion Whether the status line contains some. For example:
 
 ```java
 get("/x").then().assertThat().statusLine(containsString("some"))
 ```
 
-#### Header 断言
+#### Header Assertion
 
-- 断言 Header 的值是否等于 HeaderValue，示例：
+- Asserts whether the value of Header is equal to HeaderValue. For example:
 
 ```java
 get("/x").then().assertThat().header("headerName", "headerValue")
 ```
 
-- 同时断言 多个 Header 的值是否等于 HeaderValue，示例：
+- Asserts whether the value of multiple Headers is equal to HeaderValue at the same time. For example:
 
 ```java
 get("/x").then().assertThat().headers("headerName1", "headerValue1", "headerName2", "headerValue2")
 ```
 
-- 断言 Header 的值是否包含 HeaderValue，示例：
+- Asserts whether the value of the Header contains a HeaderValue. For example:
 
 ```java
 get("/x").then().assertThat().headers("headerName1", "headerValue1", "headerName2", containsString("Value2"))
 ```
 
-- 断言 Header 的“Content-Length”小于 1000，示例：
+- Assert that the "Content-Length" of the Header is less than 1000. For example:
 
-> 可以先使用映射函数首先将头值转换为 int，然后在使用 Hamcrest 验证前使用“整数”匹配器进行断言：
+> The header can be first converted to int using the mapping function, and then asserted using the "integer" matcher before validation with Hamcrest:
 
 ```java
 get("/something").then().assertThat().header("Content-Length", Integer::parseInt, lessThan(1000));
 ```
 
-#### Content-Type 断言
+#### Content-Type Assertion
 
-- 断言 Content-Type 的值是否等于 application/json，示例：
+- Asserts whether the value of Content-Type is equal to application/json. For example:
 
 ```java
 get("/x").then().assertThat().contentType(ContentType.JSON)
 ```
 
-#### 内容全匹配断言
+#### Full body/content matching Assertion
 
-- 断言 响应体是否完全等于 something，示例：
+- Assertion Whether the response body is exactly equal to something. For example:
 
 ```java
 get("/x").then().assertThat().body(equalTo("something"))
 ```
 
-#### 响应时间断言
+#### Measuring Response Time
 
-> REST Assured  2.8.0 开始支持测量响应时间，例如：
+> As of version 2.8.0 REST Assured has support measuring response time. For example:
 
 ```java
 long timeInMs = get("/lotto").time()
 ```
 
-或使用特定时间单位：
+or using a specific time unit:
 
 ```java
 long timeInSeconds = get("/lotto").timeIn(SECONDS);
 
 ```
 
-其中 SECONDS 只是一个标准的 TimeUnit。您还可以使用 DSL 验证：
+where 'SECONDS' is just a standard 'TimeUnit'. You can also validate it using the validation DSL:
 
 ```java
 when().
@@ -818,7 +772,7 @@ then().
       time(lessThan(2000L)); // Milliseconds
 ```
 
-或
+or
 
 ```java
 when().
@@ -827,14 +781,14 @@ then().
       time(lessThan(2L), SECONDS);
 ```
 
-需要注意的是，您只能参考性地将这些测量数据与服务器请求处理时间相关联（因为响应时间将包括 HTTP 往返和 REST Assured 处理时间等，不能做到十分准确）。
+Note that you can only referentially correlate these measurements to server request processing times (as response times will include HTTP roundtrips, REST Assured processing times, etc., and cannot be very accurate).
 
-### 文件上传
+### File Upload
 
-通常我们在向服务器传输大容量的数据时，比如文件时会使用 multipart 表单数据技术。
-rest-assured 提供了一种`multiPart`方法来辨别这究竟是文件、二进制序列、输入流还是上传的文本。
+Often we use the multipart form data technique when transferring large amounts of data to the server, such as files.
+rest-assured provides a `multiPart` method to recognize whether this is a file, a binary sequence, an input stream, or uploaded text.
 
-- 表单中上只传一个文件，示例：
+- Upload only one file in the form. For example:
 
 ```java
 given().
@@ -843,7 +797,7 @@ when().
         post("/upload");
 ```
 
-- 存在 control 名的情况下上传文件，示例：
+- Uploading a file in the presence of a control name. For example:
 
 ```java
 given().
@@ -852,7 +806,7 @@ when().
         post("/upload");
 ```
 
-- 同一个请求中存在多个"multi-parts"事务，示例：
+- Multiple "multi-parts" entities in the same request. For example:
 
 ```java
 byte[] someData = ..
@@ -864,9 +818,9 @@ when().
         post("/upload");
 ```
 
-- MultiPartSpecBuilder 用法，示例：
+- MultiPartSpecBuilder use cases. For example:
 
-> 更多使用方法可以使用[MultiPartSpecBuilder](http://static.javadoc.io/io.rest-assured/rest-assured/3.0.1/io/restassured/builder/MultiPartSpecBuilder.html)：
+> For more usage references[MultiPartSpecBuilder](http://static.javadoc.io/io.rest-assured/rest-assured/3.0.1/io/restassured/builder/MultiPartSpecBuilder.html)：
 
 ```java
 Greeting greeting = new Greeting();
@@ -884,30 +838,30 @@ then().
         statusCode(200);
 ```
 
-- MultiPartConfig 用法，示例：
+- MultiPartConfig use cases. For example:
 
->[MultiPartConfig](http://static.javadoc.io/io.rest-assured/rest-assured/3.0.1/io/restassured/config/MultiPartConfig.html)可用来指定默认的 control 名和文件名
+>[MultiPartConfig](http://static.javadoc.io/io.rest-assured/rest-assured/3.0.1/io/restassured/config/MultiPartConfig.html)You can specify the default control name and file name.
 
 ```java
 given().config(config().multiPartConfig(multiPartConfig().defaultControlName("something-else")))  
 ```
 
-> 默认把 control 名配置为"something-else"而不是"file"。
-> 更多用法查看 [博客介绍](http://blog.jayway.com/2011/09/15/multipart-form-data-file-uploading-made-simple-with-rest-assured/)
+> By default, the control name is configured as "something-else" instead of "file".
+> For more usage references [blog introduction](http://blog.jayway.com/2011/09/15/multipart-form-data-file-uploading-made-simple-with-rest-assured/)
 
-### Logging 日志
+### Logging
 
-当我们在编写接口测试脚本的时候，我们可能需要在测试过程中打印一些日志，以便于我们在测试过程中查看接口的请求和响应信息，以及一些其他的信息。RestAssured 提供了一些方法来打印日志，我们可以根据需要选择合适的方法来打印日志。
+When we are writing interface test scripts, we may need to print some logs during the test process so that we can view the request and response information of the interface and some other information during the test process.RestAssured provides some methods to print logs.
 
-- RestAssured 提供了一个全局的日志配置方法，可以在测试开始前配置日志，然后在测试过程中打印日志。这种方法适用于所有的测试用例，但是它只能打印请求和响应的信息，不能打印其他的信息。
+- RestAssured provides a global logging configuration method that allows you to configure logging before the test starts and then print the logs during the test. This method is applicable to all test cases, but it can only print request and response information, not other information.
 
-- RestAssured 还提供了一个局部的日志配置方法，可以在测试过程中打印日志。这种方法可以打印请求和响应的信息，也可以打印其他的信息。
+- RestAssured also provides a localized log configuration method that prints logs during the test. This method prints request and response information as well as other information.
 
-#### 全局日志配置
+#### Global logging configuration
 
-##### 添加全局日志步骤
+##### Steps to add global logging configuration
 
-- 引入日志相关的依赖类
+- Importing logging-related dependency classes
   
 ```java
 import io.restassured.config.LogConfig;
@@ -916,32 +870,32 @@ import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;
 ```
 
-- 在 setup() 方法中添加日志配置
+- Adding logging configuration to the setup() method
 
-> 使用 LogConfig 配置，启用了请求和响应的日志记录，以及启用了漂亮的输出格式。启用了请求和响应的日志记录过滤器，这将记录请求和响应的详细信息。
+> Use LogConfig configuration to enable logging of requests and responses, as well as to enable nice output formatting. Enabled logging filters for requests and responses, which will log details of requests and responses.
 
 ```java
-// 启用全局请求和响应日志记录
+// Setting the Global Request and Response Logging Configuration
         RestAssured.config = RestAssured.config()
                 .logConfig(LogConfig.logConfig()
                         .enableLoggingOfRequestAndResponseIfValidationFails(LogDetail.ALL)
                         .enablePrettyPrinting(true));
 ```
 
-- 在 setup() 方法中启用了全局日志记录过滤器
+- Enabled global logging filters in the setup() method
 
 ```java
-// 启用全局请求和响应日志记录过滤器
+// Enable global request and response logging filters
     RestAssured.filters(new RequestLoggingFilter(), new ResponseLoggingFilter());
 ```
 
-##### 全局日志代码示例
+##### Global Logging Code Example
 
 ```java
 package com.example;
 
 import io.restassured.RestAssured;
-// 引入日志相关的类
+// Importing logging-related dependency classes
 import io.restassured.config.LogConfig;
 import io.restassured.filter.log.LogDetail;
 import io.restassured.filter.log.RequestLoggingFilter;
@@ -956,41 +910,41 @@ public class TestDemo {
 
     @BeforeClass
     public void setup() {
-        // 启用全局请求和响应日志记录
+        // Setting the Global Request and Response Logging Configuration
         RestAssured.config = RestAssured.config()
                 .logConfig(LogConfig.logConfig()
                         .enableLoggingOfRequestAndResponseIfValidationFails(LogDetail.ALL)
                         .enablePrettyPrinting(true));
-        // 启用全局请求和响应日志记录过滤器
+        // Enable global request and response logging filters
         RestAssured.filters(new RequestLoggingFilter(), new ResponseLoggingFilter());
     }
 
     @Test(description = "Verify that the Get Post API returns correctly")
     public void verifyGetAPI() {
-      // 测试用例已省略，可参考 demo
+      // Test cases have been omitted, refer to the demo
     }
 
     @Test(description = "Verify that the publish post API returns correctly")
     public void verifyPostAPI() {
-      // 测试用例已省略，可参考 demo
+      // Test cases have been omitted, refer to the demo
     }
 }
 ```
 
-##### 查看全局日志输出
+##### Viewing Global Log Output
 
-- 打开本项目的 Terminal 窗口，执行以下命令运行测试脚本
-- 查看日志输出
+- Open the Terminal window for this project and run the test script by executing the following command
+- Viewing Log Output
 
 ![log-sceenshot1](https://cdn.jsdelivr.net/gh/naodeng/blogimg@master/uPic/9Mh9Z8.png)
 
-#### 局部日志配置
+#### Localized logging configuration
 
-在 RestAssured 中，你可以进行局部日志配置，以便在特定的测试方法或请求中启用或禁用日志记录，而不影响全局配置。
+In RestAssured, you can make localized logging configurations to enable or disable logging for specific test methods or requests without affecting the global configuration.
 
-##### 添加日志步骤
+##### Steps to add Localized logging configuration
 
-- 在想要打印日志的测试方法中启用了添加日志配置，示例：
+- Add logging configuration is enabled in the test method for which you want to print logs
 
 ```java
     @Test(description = "Verify that the Get Post API returns correctly")
@@ -998,7 +952,7 @@ public class TestDemo {
 
         // Given
         given()
-                .log().everything(true)  // 输出 request 相关日志
+                .log().everything(true)  // Output request-related logs
                 .baseUri("https://jsonplaceholder.typicode.com")
                 .header("Content-Type", "application/json")
 
@@ -1008,52 +962,52 @@ public class TestDemo {
 
                 // Then
                 .then()
-                .log().everything(true)  // 输出 response 相关日志
+                .log().everything(true)  // Output response-related logs
                 .statusCode(200)
     }
 ```
 
-##### 查看局部日志输出
+##### Viewing Localized Log Output
 
-- 打开本项目的 Terminal 窗口，执行以下命令运行测试脚本
-- 查看日志输出
+- Open the Terminal window for this project and run the test script by executing the following command
+- Viewing Log Output
 
 ![report1](https://cdn.jsdelivr.net/gh/naodeng/blogimg@master/uPic/GxZyyG.png)
 
-#### LogConfig 配置说明
+#### LogConfig Configuration Description
 
-在 RestAssured 中，你可以使用 `LogConfig` 类来配置请求和响应的日志记录。`LogConfig` 允许你定义日志详细程度、输出格式、输出位置等。以下是一些常见的 `LogConfig` 配置示例：
+In Rest-Assured, you can use the `LogConfig` class to configure logging of requests and responses. The `LogConfig` allows you to define the level of logging detail, the output format, the location of the output, and so on. The following are some common `LogConfig` configuration examples:
 
-1. **启用请求和响应的日志记录：**
-
-   ```java
-   RestAssured.config = RestAssured.config()
-       .logConfig(LogConfig.logConfig().enableLoggingOfRequestAndResponseIfValidationFails(LogDetail.ALL));
-   ```
-
-   这将启用请求和响应的日志记录，只有当验证失败时才记录。
-
-2. **配置输出级别：**
+1. **Enable logging of requests and responses:**
 
    ```java
    RestAssured.config = RestAssured.config()
-       .logConfig(LogConfig.logConfig().enableLoggingOfRequestAndResponseIfValidationFails(LogDetail.HEADERS));
+       .logConfig(LogConfig.logConfig().enableLoggingOfRequestAndResponseIfValidationFails(LogDetail.ALL));;
    ```
 
-   这将只记录请求和响应的头部信息。
+   This will enable logging of requests and responses only if validation fails.
 
-3. **配置输出位置：**
+2. **Configure the output level:**
+
+   ``` java
+   RestAssured.config = RestAssured.config()
+       .logConfig(LogConfig.logConfig().enableLoggingOfRequestAndResponseIfValidationFails(LogDetail.HEADERS));;
+   ```
+
+   This will log only the request and response headers.
+
+3. **Configure the location of the output:**
 
    ```java
    RestAssured.config = RestAssured.config()
        .logConfig(LogConfig.logConfig().enableLoggingOfRequestAndResponseIfValidationFails(LogDetail.ALL)
            .enablePrettyPrinting(true)
-           .defaultStream(FileOutputStream("log.txt")));
+           .defaultStream(FileOutputStream("log.txt"))); ;enablePrettyPrinting(true).enablePrettyPrinting(true)
    ```
 
-   这将日志记录输出到名为 "log.txt" 的文件。
+   This outputs the log records to a file named "log.txt".
 
-4. **配置漂亮的输出格式：**
+4. **Configure the nice output format:**
 
    ```java
    RestAssured.config = RestAssured.config()
@@ -1061,91 +1015,91 @@ public class TestDemo {
            .enablePrettyPrinting(true));
    ```
 
-   这将启用漂亮的输出格式，使日志更易于阅读。
+   This will enable nice output formatting and make the logs easier to read.
 
-你可以根据你的具体需求组合这些配置选项，并将其设置为 `RestAssured.config` 以配置全局的请求和响应日志记录。这将有助于在 RestAssured 中记录和审查请求和响应，以便调试和分析问题。
+You can combine these configuration options according to your specific needs and set it to `RestAssured.config` to configure global request and response logging. This will help log and review requests and responses in RestAssured for debugging and analyzing issues.
 
-#### Request Logging 请求日志记录
+#### Request Logging
 
-从版本 1.5 开始，REST Assured 支持在使用 RequestLoggingFilter 将请求规范发送到服务器之前记录请求规范。请注意，HTTP Builder 和 HTTP Client 可能会添加日志中打印的内容之外的其他标头。筛选器将仅记录请求规范中指定的详细信息。也就是说，您不能将 RequestLoggingFilter 记录的详细信息视为实际发送到服务器的详细信息。此外，后续筛选器可能会在日志记录发生后更改请求。如果您需要记录网络上实际发送的内容，请参阅 HTTP 客户端日志记录文档或使用外部工具，例如 Wireshark。
+Starting with version 1.5, REST Assured supports logging request specifications before they are sent to the server using RequestLoggingFilter. Note that HTTP Builder and HTTP Client may add headers other than what is printed in the log. The filter will only log the details specified in the request specification. That is, you cannot consider the details logged by the RequestLoggingFilter to be the details actually sent to the server. In addition, subsequent filters may change the request after logging has occurred. If you need to log what is actually sent over the network, see the HTTP Client Logging documentation or use an external tool such as fiddler.
 
-示例：
+Examples：
 
 ```java
-given().log().all()   // 记录所有请求规范细节，包括参数、标头和正文
-given().log().params()   // 只记录请求的参数
-given().log().body()   // 只记录请求正文
-given().log().headers()   // 只记录请求头
-given().log().cookies()   // 只记录请求 cookies
-given().log().method()   // 只记录请求方法
-given().log().path()   // 只记录请求路径
+given().log().all() // Log all request specification details including parameters, headers and body
+given().log().params() // Log only the parameters of the request
+given().log().body() // Log only the request body
+given().log().headers()  // Log only the request headers
+given().log().cookies()  // Log only the request cookies
+given().log().method()  // Log only the request method
+given().log().path()  // Log only the request path
 ```
 
-#### Response Logging 响应日志记录
+#### Response Logging
 
-- 只想要打印响应正文，而不考虑状态代码，可以执行以下操作，
-示例：
+- Wanting to print only the body of the response, regardless of the status code, you can do the following.
+, for example:
 
 ```java
 get("/x").then().log().body()
 ```
 
-- 不管是否发生错误，都将打印响应正文。如果只对在发生错误时打印响应正文感兴趣，示例：
+- The response body will be printed whether or not an error occurs. If only interested in printing the response body when an error occurs, for example:
 
 ```java
 get("/x").then().log().ifError()
 ```
 
-- 在响应中记录所有详细信息，包括状态行、标头和 Cookie，示例：
+- Record all details in the response, including status lines, headers, and cookies, for example:
 
 ```java
 get("/x").then().log().all()   
 ```
 
-- 在响应中记录只记录状态行、标题或 Cookie，示例：
+- Record only the status line, header, or cookie in the response, for example:
 
 ```java
-get("/x").then().log().statusLine()   // 只记录状态行
-get("/x").then().log().headers()   // 只记录响应头
-get("/x").then().log().cookies()   // 只记录响应 cookies
+get("/x").then().log().statusLine()  // Only log the status line
+get("/x").then().log().headers()  // Only log the response headers
+get("/x").then().log().cookies()   // Only log the response cookies
 ```
 
-- 配置为仅当状态代码与某个值匹配时才记录响应，示例：
+- Configured to log a response only when the status code matches a value. for example:
 
 ```java
-get("/x").then().log().ifStatusCodeIsEqualTo(302)   // 仅在状态代码等于 302 时记录日志
-get("/x").then().log().ifStatusCodeMatches(matcher)   // 仅在状态代码与提供的配置匹配时才记录日志
+get("/x").then().log().ifStatusCodeIsEqualTo(302)   // Only log if the status code is equal to 302
+get("/x").then().log().ifStatusCodeMatches(matcher)   // Only log if the status code matches the supplied Hamcrest matcher
 ```
 
-#### 只在验证失败时记录日志
+#### Log if validation fails
 
-- 从 REST Assured 2.3.1 开始，只有在验证失败时才能记录请求或响应。要记录请求日志，示例：
+- Since REST Assured 2.3.1 you can log the request or response only if the validation fails. To log the request do. for example:
 
 ```java
 given().log().ifValidationFails()
 ```
 
-- 要记录响应日志，示例：
+- To log the response. for example:
 
 ```java
 then().log().ifValidationFails()
 ```
 
-- 可以使用 LogConfig 同时为请求和响应启用此功能，示例：
+- It can be enabled for both requests and responses using LogConfig, for example:
 
 ```java
 given().config(RestAssured.config().logConfig(logConfig().enableLoggingOfRequestAndResponseIfValidationFails(HEADERS)))
 ```
 
-> 如果验证失败，日志仅记录请求头。
+> If authentication fails, the log only records the request header.
 
-- 另外一个快捷方式，用于在验证失败时为所有请求启用请求和响应的日志记录，示例：
+- Another shortcut to enable request and response logging for all requests if authentication fails, for example:
   
 ```java
 RestAssured.enableLoggingOfRequestAndResponseIfValidationFails();
 ```
 
-- 从版本 4.5.0 开始，您还可以使用 指定 onFailMessage 测试失败时将显示的消息，示例：
+- Starting with version 4.5.0, you can also use specify the message that will be displayed if the onFailMessage test fails, for example:
   
 ```java
 when().
@@ -1155,60 +1109,60 @@ then().
       statusCode(200);
 ```
 
-#### Header 黑名单配置
+#### Header Blacklist Configuration
 
-从 REST Assured 4.2.0 开始，可以将标头列入黑名单，以便它们不会显示在请求或响应日志中。相反，标头值将替换为 [ BLACKLISTED ] .您可以使用 LogConfig 启用此基于每个标头的功能，示例：
+Starting with REST Assured 4.2.0, it is possible to blacklist headers so that they do not show up in request or response logs. Instead, the header value will be replaced with [ BLACKLISTED ] . You can enable this feature on a per-header basis using LogConfig, for example:
   
 ```java
 given().config(config().logConfig(logConfig().blacklistHeader("Accept")))  
 ```
 
-### Filters 过滤器
+### Filters
 
-在 RestAssured 中，你可以使用过滤器来修改请求和响应。过滤器允许你在请求和响应的不同阶段修改请求和响应。例如，你可以在请求之前修改请求，或者在响应之后修改响应。你可以使用过滤器来添加请求头、请求参数、请求体、响应头、响应体等。
+In RestAssured, you can use filters to modify requests and responses. Filters allow you to modify requests and responses at different stages of the request and response process. For example, you can modify the request before the request or the response after the response. You can use filters to add request headers, request parameters, request bodies, response headers, response bodies, and so on.
 
-过滤器可用于实现自定义身份验证方案、会话管理、日志记录等。若要创建筛选器，需要实现 io.restassured.filter.Filter 接口。要使用过滤器，您可以执行以下操作：
+Filters can be used to implement custom authentication schemes, session management, logging, and so on. To create a filter, you need to implement the io.restassured.filter.Filter interface. To use a filter, you can do the following:
 
 ```java
 given().filter(new MyFilter())  
 ```
 
-REST Assured 提供了几个可供使用的过滤器：
+There are a couple of filters provided by REST-Assured that are ready to use:
 
-- `io.restassured.filter.log.RequestLoggingFilter` ：将打印请求规范详细信息的筛选器。
-- `io.restassured.filter.log.ResponseLoggingFilter` ：如果响应与给定状态代码匹配，则将打印响应详细信息的筛选器。
-- `io.restassured.filter.log.ErrorLoggingFilter` ：在发生错误时打印响应正文的筛选器（状态代码介于 400 和 500 之间）。
+- `io.restassured.filter.log.RequestLoggingFilter`: A filter that'll print the request specification details.
+- `io.restassured.filter.log.ResponseLoggingFilter`: A filter that'll print the response details if the response matches a given status code.
+- `io.restassured.filter.log.ErrorLoggingFilter`: A filter that'll print the response body if an error occurred (status code is between 400 and 500).
 
-#### Ordered Filters 有序过滤器
+#### Ordered Filters
 
-从 REST Assured 3.0.2 开始，如果需要控制筛选器排序，可以实现 io.restassured.filter.OrderedFilter 接口。在这里，您将实现返回一个整数的方法，getOrder 该整数表示筛选器的优先级。值越低，优先级越高。您可以定义的最高优先级是 Integer.MIN_VALUE，最低优先级是 Integer.MAX_VALUE。未实现 io.restassured.filter.OrderedFilter 的过滤器的默认优先级为 1000。
+As of REST Assured 3.0.2 you can implement the `io.restassured.filter.OrderedFilter` interface if you need to control the filter ordering. Here you implement the getOrder method to return an integer representing the precedence of the filter. A lower value gives higher precedence. The highest precedence you can define is Integer.MIN_VALUE and the lowest precedence is Integer.MAX_VALUE. Filters not implementing `io.restassured.filter.OrderedFilter` will have a default precedence of 1000.
 
-[示例](https://github.com/rest-assured/rest-assured/blob/master/examples/rest-assured-itest-java/src/test/java/io/restassured/itest/java/OrderedFilterITest.java)
+[examples](https://github.com/rest-assured/rest-assured/blob/master/examples/rest-assured-itest-java/src/test/java/io/restassured/itest/java/OrderedFilterITest.java)
 
-#### Response Builder 响应生成器
+#### Response Builder
 
-如果需要更改筛选器中的响应内容，可以使用 ResponseBuilder 基于原始响应创建新的响应。例如，如果要将原始响应的正文更改为其他内容，可以执行以下操作：
+If you need to change the Response from a filter you can use the ResponseBuilder to create a new Response based on the original response. For example if you want to change the body of the original response to something else you can do:
 
 ```java
 Response newResponse = new ResponseBuilder().clone(originalResponse).setBody("Something").build();
 ```
 
-### 持续集成
+### CI/CD integration
 
-#### 接入 github action
+#### integration github action
 
-以 github action 为例，其他 CI 工具类似
+Use github action as an example, and other CI tools similarly
 
-##### Gradle 版本接入 github action
+##### The Gradle version integration github action
 
-可参考 demo：<https://github.com/Automation-Test-Starter/RestAssured-gradle-demo>
+See the demo at <https://github.com/Automation-Test-Starter/RestAssured-gradle-demo>
 
-创建.github/workflows 目录：在你的 GitHub 仓库中，创建一个名为 .github/workflows 的目录。这将是存放 GitHub Actions 工作流程文件的地方。
+- Create the .github/workflows directory: In your GitHub repository, create a directory called .github/workflows. This will be where the GitHub Actions workflow files will be stored.
 
-创建工作流程文件：在.github/workflows 目录中创建一个 YAML 格式的工作流程文件，例如 gradle.yml。
+- Create a workflow file: Create a YAML-formatted workflow file, such as gradle.yml, in the .github/workflows directory.
 
-编辑 gradle.yml 文件：将以下内容复制到文件中
-  
+- Edit the gradle.yml file: Copy the following into the file
+
 ```yaml
 name: Gradle and REST Assured Tests
 
@@ -1250,20 +1204,20 @@ jobs:
           path: build/reports/tests/test
 ```
 
-- 提交代码：将 gradle.yml 文件添加到仓库中并提交。
-- 查看测试报告：在 GitHub 中，导航到你的仓库。单击上方的 Actions 选项卡，然后单击左侧的 Gradle and REST Assured Tests 工作流。你应该会看到工作流正在运行，等待执行完成，就可以查看结果。
+- Commit the code: Add the gradle.yml file to your repository and commit.
+- View test reports: In GitHub, navigate to your repository. Click the Actions tab at the top and then click the Gradle and REST Assured Tests workflow on the left. You should see the workflow running, wait for the execution to complete and you can view the results.
 
 ![gradle-test-report3](https://cdn.jsdelivr.net/gh/naodeng/blogimg@master/uPic/gradle-report3.png)
 
-##### Maven 版本接入 github action
+##### The Maven version integration github action
 
-可参考 demo：<https://github.com/Automation-Test-Starter/RestAssured-maven-demo>
+See the demo at <https://github.com/Automation-Test-Starter/RestAssured-maven-demo>
 
-创建.github/workflows 目录：在你的 GitHub 仓库中，创建一个名为 .github/workflows 的目录。这将是存放 GitHub Actions 工作流程文件的地方。
+- Create the .github/workflows directory: In your GitHub repository, create a directory called .github/workflows. This will be where the GitHub Actions workflow files will be stored.
 
-创建工作流程文件：在.github/workflows 目录中创建一个 YAML 格式的工作流程文件，例如 maven.yml。
+- Create a workflow file: Create a YAML-formatted workflow file, such as maven.yml, in the .github/workflows directory.
 
-编辑 maven.yml 文件：将以下内容复制到文件中
+- Edit the maven.yml file: Copy the following into the file
   
 ```yaml
 name: Maven and REST Assured Tests
@@ -1304,39 +1258,39 @@ jobs:
         path: target/surefire-reports
 ```
 
-- 提交代码：将 maven.yml 文件添加到仓库中并提交。
-- 查看测试报告：在 GitHub 中，导航到你的仓库。单击上方的 Actions 选项卡，然后单击左侧的 Maven and REST Assured Tests 工作流。你应该会看到工作流正在运行，等待执行完成，就可以查看结果。
+- Commit the code: Add the maven.yml file to the repository and commit.
+- View test reports: In GitHub, navigate to your repository. Click the Actions tab at the top and then click the Maven and REST Assured Tests workflow on the left. You should see the workflow running, wait for the execution to complete and you can view the results.
 
 ![maven-test-report3](https://cdn.jsdelivr.net/gh/naodeng/blogimg@master/uPic/maven-report3.png)
 
-### 集成 allure 测试报告
+### Integrating allure test reports
 
-#### allure 简介
+#### allure Introduction
 
-Allure是一个用于生成漂亮、交互式测试报告的开源测试框架。它可以与多种测试框架（如JUnit、TestNG、Cucumber等）和多种编程语言（如Java、Python、C#等）一起使用。
+Allure is an open source testing framework for generating beautiful, interactive test reports. It can be used with a variety of testing frameworks (e.g. JUnit, TestNG, Cucumber, etc.) and a variety of programming languages (e.g. Java, Python, C#, etc.).
 
-Allure 测试报告具有以下特点：
+Allure test reports have the following features:
 
-- 美观和交互式：Allure 测试报告以美观和交互式的方式呈现测试结果，包括图形、图表和动画。这使得测试报告更容易阅读和理解。
-- 多语言支持：Allure 支持多种编程语言，因此您可以在不同的语言中编写测试，并生成统一的测试报告。
-测试用例级别的详细信息：Allure 允许您为每个测试用例添加详细信息，包括描述、类别、标签、附件、历史数据等。这些信息有助于更全面地了解测试结果。
-- 历史趋势分析：Allure 支持测试历史趋势分析，您可以查看测试用例的历史表现，识别问题和改进测试质量。
-- 类别和标签：您可以为测试用例添加类别和标签，以更好地组织和分类测试用例。这使得报告更具可读性。
-- 附件和截图：Allure 允许您附加文件、截图和其他附件，以便更好地记录测试过程中的信息。
-- 集成性：Allure 可以与各种测试框架和构建工具（如 Maven、Gradle）无缝集成，使得生成报告变得简单。
-- 开源社区支持：Allure 是一个开源项目，拥有一个活跃的社区，提供了广泛的文档和支持。这使得它成为许多自动化测试团队的首选工具。
+- Aesthetically pleasing and interactive: Allure test reports present test results in an aesthetically pleasing and interactive way, including graphs, charts and animations. This makes test reports easier to read and understand.
+- Multi-language support: Allure supports multiple programming languages, so you can write tests in different languages and generate uniform test reports.
+Test case level details: Allure allows you to add detailed information to each test case, including descriptions, categories, labels, attachments, historical data, and more. This information helps provide a more complete picture of the test results.
+- Historical Trend Analysis: Allure supports test historical trend analysis, which allows you to view the historical performance of test cases, identify issues and improve test quality.
+- Categories and Tags: You can add categories and tags to test cases to better organize and categorize test cases. This makes reporting more readable.
+- Attachments and Screenshots: Allure allows you to attach files, screenshots, and other attachments to better document information during testing.
+- Integration: Allure seamlessly integrates with a variety of testing frameworks and build tools (e.g. Maven, Gradle), making it easy to generate reports.
+- Open Source Community Support: Allure is an open source project with an active community that provides extensive documentation and support. This makes it the tool of choice for many automated testing teams.
 
-Allure 测试报告的主要目标是提供一个清晰、易于阅读的方式来展示测试结果，以帮助开发团队更好地理解测试的状态和质量，快速识别问题，并采取必要的行动。无论您是开发人员、测试人员还是项目经理，Allure 测试报告都能为您提供有用的信息，以改进软件质量和可靠性。
+The main goal of Allure test reports is to provide a clear, easy-to-read way to present test results to help development teams better understand the status and quality of their tests, quickly identify problems, and take the necessary action. Whether you are a developer, tester, or project manager, Allure test reports provide you with useful information to improve software quality and reliability.
 
-官方网站：<https://docs.qameta.io/allure/>
+Official Website: <https://docs.qameta.io/allure/>
 
-#### 集成步骤
+#### Integration steps
 
-##### Maven 版本集成 allure
+##### The Maven version integration of allure
 
-- 在 POM.xml 中添加 allure 依赖
+- Add allure dependency in POM.xml
 
->可 copy 本项目中的 pom.xml 文件内容
+> Copy the contents of the pom.xml file in this project
 
 ```xml
     <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-testng -->
@@ -1353,7 +1307,7 @@ Allure 测试报告的主要目标是提供一个清晰、易于阅读的方式�
     </dependency>
 ```
 
-- 在 POM.xml 中添加 allure 插件
+- Add allure plugin to POM.xml
 
 ```xml
       <plugin>
@@ -1366,9 +1320,9 @@ Allure 测试报告的主要目标是提供一个清晰、易于阅读的方式�
       </plugin>
 ```
 
-- 在 src/test/java 下创建用于测试 REST API 的测试代码
+- Create test code for testing the REST API under src/test/java.
 
-> 以下为 demo 示例，详细部分可参考 项目：<https://github.com/Automation-Test-Starter/RestAssured-maven-demo>
+> The following is an example of a demo, see the project for details: <https://github.com/Automation-Test-Starter/RestAssured-maven-demo>.
 
 ```java
 package com.example;
@@ -1391,7 +1345,7 @@ public class TestDemo {
 
         // Given
         given()
-                .filter(new AllureRestAssured()) //设置 AllureRestAssured 过滤器，用来在测试报告中展示请求和响应信息
+                .filter(new AllureRestAssured()) // Set up the AllureRestAssured filter to display request and response information in the test report
                 .baseUri("https://jsonplaceholder.typicode.com")
                 .header("Content-Type", "application/json")
 
@@ -1415,7 +1369,7 @@ public class TestDemo {
     @Description("Test Description : Verify that the post API returns correctly")
     public void verifyPostAPI() {        // Given
         given()
-                .filter(new AllureRestAssured()) //设置 AllureRestAssured 过滤器，用来在测试报告中展示请求和响应信息
+                .filter(new AllureRestAssured()) // Set up the AllureRestAssured filter to display request and response information in the test report
                 .baseUri("https://jsonplaceholder.typicode.com")
                 .header("Content-Type", "application/json")
 
@@ -1437,48 +1391,48 @@ public class TestDemo {
 }
 ```
 
-- 运行测试并生成 Allure 报告
+- Run tests and generate Allure reports
 
 ```bash
 mvn clean test
 ```
 
-> 生成的 Allure 报告在项目根目录的 allure-results 文件下
+> The generated Allure report is in the allure-results file in the project root directory.
 
-- 预览 Allure 报告
+- Preview of the Allure Report
 
 ```bash
 mvn allure:serve
 ```
 
-> 运行命令会自动打开浏览器，预览 Allure 报告
+> Running the command automatically opens a browser to preview the Allure report.
 
 ![allure-report](https://cdn.jsdelivr.net/gh/naodeng/blogimg@master/uPic/JsHrOQ.png)
 
 ![allure-report1](https://cdn.jsdelivr.net/gh/naodeng/blogimg@master/uPic/ZXgnOD.png)
 
-##### Gradle 版本集成 allure
+##### The Gradle version of allure integration
 
-- 在 build.gradle 中添加 allure 插件
+- Add the allure plugin to your build.gradle.
 
->可 copy 本项目中的 build.gradle 文件内容
+> Copy the contents of the build.gradle file in this project
 
 ```groovy
 id("io.qameta.allure") version "2.11.2"
 ```
 
-- 在 build.gradle 中添加 allure 依赖
+- Add allure dependency to build.gradle
 
->可 copy 本项目中的 build.gradle 文件内容
+> Copy the contents of the build.gradle file in this project
 
 ```groovy
     implementation 'io.qameta.allure:allure-testng:2.24.0' // Add allure report dependency
     implementation 'io.qameta.allure:allure-rest-assured:2.24.0' // Add allure report dependency
 ```
 
-- 在 src/test/java 下创建用于测试 REST API 的测试代码
+- Create test code for testing the REST API under src/test/java.
 
-> 以下为 demo 示例，详细部分可参考 项目：<https://github.com/Automation-Test-Starter/RestAssured-gradle-demo>
+> The following is an example of a demo, see the project for details: <https://github.com/Automation-Test-Starter/RestAssured-gradle-demo>.
 
 ```java
 package com.example;
@@ -1501,7 +1455,7 @@ public class TestDemo {
 
         // Given
         given()
-                .filter(new AllureRestAssured()) //设置 AllureRestAssured 过滤器，用来在测试报告中展示请求和响应信息
+                .filter(new AllureRestAssured()) // Set up the AllureRestAssured filter to display request and response information in the test report
                 .baseUri("https://jsonplaceholder.typicode.com")
                 .header("Content-Type", "application/json")
 
@@ -1525,7 +1479,7 @@ public class TestDemo {
     @Description("Test Description : Verify that the post API returns correctly")
     public void verifyPostAPI() {        // Given
         given()
-                .filter(new AllureRestAssured()) //设置 AllureRestAssured 过滤器，用来在测试报告中展示请求和响应信息
+                .filter(new AllureRestAssured())                 .filter(new AllureRestAssured()) // Set up the AllureRestAssured filter to display request and response information in the test report
                 .baseUri("https://jsonplaceholder.typicode.com")
                 .header("Content-Type", "application/json")
 
@@ -1547,30 +1501,30 @@ public class TestDemo {
 }
 ```
 
-- 运行测试并生成 Allure 报告
+- Run the test and generate the Allure report
 
 ```bash
 gradle clean test 
-```
+``
 
-> 生成的 Allure 报告在项目根目录的 build/allure-results 文件下
+> The generated Allure report is in the build/allure-results file in the project root directory.
 
-- 预览 Allure 报告
+- Preview the Allure report
 
 ```bash
 gradle allureServe
 ```
 
-> 运行命令会自动打开浏览器，预览 Allure 报告
+> Running the command automatically opens a browser to preview the Allure report.
 
 ![allure-report](https://cdn.jsdelivr.net/gh/naodeng/blogimg@master/uPic/JsHrOQ.png)
 
 ![allure-report1](https://cdn.jsdelivr.net/gh/naodeng/blogimg@master/uPic/ZXgnOD.png)
 
-## 参考资料
+## Reference
 
-- Rest assured 官方文档：<https://rest-assured.io/>
+- Rest assured official documentation: <https://rest-assured.io/>
 
-- Rest assured 官方 github：<https://github.com/rest-assured/rest-assured>
+- Rest assured official github:<https://github.com/rest-assured/rest-assured>
 
-- Rest assured 官方文档中文翻译：<https://github.com/RookieTester/rest-assured-doc>
+- Rest assured official docs in Chinese: <https://github.com/RookieTester/rest-assured-doc>
